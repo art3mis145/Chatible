@@ -106,6 +106,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "chatible:build:production",
+            "firebaseProject": "chatible-d7afb",
+            "firebaseHostingSite": "chatible-d7afb"
+          }
         }
       }
     }
