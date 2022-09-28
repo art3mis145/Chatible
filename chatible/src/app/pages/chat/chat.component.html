@@ -1,4 +1,7 @@
 <!-- Remove 'open' class, this is just to show in Codepen thumbnail -->
+
+
+
 <nav class="open">
 
     <div class="sidebar">
@@ -209,15 +212,36 @@
       <div class="left-header">
         <div class="left-header-container">
 
-          <div>
-
-            <div>
-              <img src="assets\picture\avatar.png" alt="Avatar" class="avatarChat" />
-            </div>
-
-            <span class="header-bold">[USER NAME HERE]</span>
-
+          <div *ngIf="auth.user$ | async; then authenticated else guest">
+            <!-- template will replace this div -->
           </div>
+
+          <ng-template #guest>
+            <div  >
+
+              <div>
+                <img src="assets\picture\avatar.png" alt="Avatar" class="avatarChat" />
+              </div>
+  
+              <span class="header-bold">Guest</span>
+  
+            </div>
+          </ng-template>
+          
+          
+
+          <ng-template #authenticated>
+            <div *ngIf="auth.user$ | async as user" >
+
+              <div>
+                <img [src]="user.photoURL"/>
+              </div>
+  
+              <span class="header-bold"> {{user.displayName}}</span>
+  
+            </div>
+          </ng-template>
+          
 
           <div class="kebab-menu" style="font-size: 30px; display: flex; flex-direction: row; gap: 30px;">
             <i class="bi bi-telephone-forward-fill"></i>

@@ -1,18 +1,28 @@
-<form>
-    <h3>Chattible</h3>
-  
-    <label for="username">Username</label>
-    <input type="text" placeholder="Email or Phone" id="username">
-  
-    <label for="password">Password</label>
-    <input type="password" placeholder="Password" id="password">
+    <form [formGroup]="registerForm" (ngSubmit)="signup()">
+      <h3>Chattible</h3>
 
-    <label for="phone">Email</label>
-    <input type="email" placeholder="Email" id="email">
+      <label for="username">Username</label>
+      <!-- <input type="text" placeholder="Email or Phone" id="username"> -->
+      <input autocomplete="off" formControlName="displayName" type="text" matInput placeholder="Display Name">
+    
+      <label for="password">Password</label>
+      <!-- <input type="password" placeholder="Password" id="password"> -->
+      <input autocomplete="off" formControlName="password" type="password" matInput placeholder="Password">
 
-    <label for="phone">Phone number</label>
-    <input type="text" placeholder="Phone number" id="phonenumber">
+      <label for="phone">Email</label>
+      <!-- <input type="email" placeholder="Email" id="email"> -->
+      <input formControlName="email" type="email" matInput placeholder="Email">
+
+      <!-- <label for="phone">Phone number</label>
+      <input type="text" placeholder="Phone number" id="phonenumber"> -->
+
+      <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+        <span>{{ firebaseErrorMessage }}</span>
+      </div>
+    
+      <button style="color: #263238;">Register your account</button>
+      <button><a style="color: #263238;" href="./login">Ready to login?</a></button>
+
+    </form>
   
-    <button style="color: #263238;">Register your account</button>
-    <button><a style="color: #263238;" href="./login">Ready to login?</a></button>
-  </form>
+    

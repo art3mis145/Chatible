@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "chatible-d7afb": {
+      "hosting": {
+        "chatible": [
+          "chatible-d7afb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "chatible-d7afb"
+  }
+}
