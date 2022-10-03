@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Peer from 'peerjs';
+
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,11 @@ import Peer from 'peerjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  // peer = new Peer();
-  constructor() {}
+  constructor(public afAuth: AngularFireAuth) {}
+
   ngOnInit(): void {}
+
+  logout(): void {
+    this.afAuth.signOut();
+  }
 }
