@@ -1,10 +1,85 @@
 <!-- Remove 'open' class, this is just to show in Codepen thumbnail -->
 
 <nav class="open">
+<<<<<<< HEAD
+
+    <div class="sidebar">
+
+      <div class="logo">
+        <i class="bx bx-menu menu-icon"></i>
+        <span class="logo-name">Chattible</span>
+      </div>
+  
+      <div class="sidebar-content">
+
+        <ul class="lists">
+          <li class="list">
+            <a href="./profile" class="nav-link">
+                <i class="bi bi-body-text icon"></i>
+              <span class="link">Profile</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" class="nav-link">
+                <i class="bi bi-bell-fill icon"></i>
+              <span class="link">Notifications</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" class="nav-link">
+                <i class="bi bi-chat-right-text-fill icon"></i>
+              <span class="link">Messages</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" class="nav-link">
+                <i class="bi bi-mic-fill icon"></i>
+              <span class="link">Video call</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" class="nav-link">
+                <i class="bi bi-layout-text-sidebar-reverse icon"></i>
+              <span class="link">To-do list</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" class="nav-link">
+                <i class="bi bi-microsoft icon"></i>
+              <span class="link">[Place holder]</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" class="nav-link">
+                <i class="bi bi-microsoft icon"></i>
+              <span class="link">[Place holder]</span>
+            </a>
+          </li>
+        </ul>
+  
+        <div class="bottom-cotent">
+          <li class="list">
+            <a href="#" class="nav-link">
+                <i class="bi bi-wrench-adjustable-circle-fill icon"></i>
+              <span class="link">Settings</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" class="nav-link">
+                <i class="bi bi-arrow-left-square-fill icon"></i>
+              <span class="link" (click)="auth.signOut()" >Logout</span>
+            </a>
+          </li>
+        </div>
+
+      </div>
+
+=======
   <div class="sidebar">
     <div class="logo">
       <i class="bx bx-menu menu-icon"></i>
       <span class="logo-name">Chattible</span>
+>>>>>>> a472eb5757423ebb57642591ef76327fc473893b
     </div>
     <h3 id="my-peerId">Your peerId: {{ peer.id }}</h3>
     <video id="localStream" width="300" controls></video>
@@ -72,7 +147,7 @@
       </div>
     </div>
   </div>
-</nav>
+
 
 <section class="overlay">
   <div class="friendlist">
@@ -108,6 +183,40 @@
       </div>
     </div>
 
+<<<<<<< HEAD
+    <div class="chatarea">
+
+      <div class="left-header">
+        <div class="left-header-container">
+
+          <div *ngIf="auth.user$ | async; then authenticated else guest">
+            <!-- template will replace this div -->
+          </div>
+
+          <ng-template #guest>
+            <div>
+
+              <div>
+                <img src="assets\picture\avatar.png" alt="Avatar" class="avatarChat" />
+              </div>
+  
+              <span class="header-bold">Guest</span>
+  
+            </div>
+          </ng-template>
+          
+          
+
+          <ng-template #authenticated>
+            <div *ngIf="auth.user$ | async as user" >
+
+              <div>
+                <img [src]="user.photoURL" alt="Avatar" class="avatarChat"/>
+              </div>
+  
+              <span class="header-bold"> {{user.displayName}}</span>
+  
+=======
     <div class="right-card-body">
       <div class="right-card-body-container">
         <div class="card">
@@ -126,6 +235,7 @@
                   <span class="bubble-outer-dot"> </span> Offline
                 </span>
               </span>
+>>>>>>> a472eb5757423ebb57642591ef76327fc473893b
             </div>
           </div>
         </div>
@@ -343,4 +453,4 @@
       </div>
     </div>
   </div>
-</section>
+
