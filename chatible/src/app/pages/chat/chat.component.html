@@ -1,5 +1,3 @@
-<!-- Remove 'open' class, this is just to show in Codepen thumbnail -->
-
 <nav class="open">
   <div class="sidebar">
     <div class="logo">
@@ -73,7 +71,6 @@
     </div>
   </div>
 </nav>
-
 <section class="overlay">
   <div class="friendlist">
     <div class="right-card-header">
@@ -108,6 +105,38 @@
       </div>
     </div>
 
+    <!-- <div class="chatarea">
+
+      <div class="left-header">
+        <div class="left-header-container">
+
+          <div *ngIf="auth.user$ | async; then authenticated else guest">
+    
+          </div>
+
+          <ng-template #guest>
+            <div>
+
+              <div>
+                <img src="assets\picture\avatar.png" alt="Avatar" class="avatarChat" />
+              </div>
+  
+              <span class="header-bold">Guest</span>
+  
+            </div>
+          </ng-template>
+          
+          
+
+          <ng-template #authenticated>
+            <div *ngIf="auth.user$ | async as user" >
+
+              <div>
+                <img [src]="user.photoURL" alt="Avatar" class="avatarChat"/>
+              </div>
+  
+              <span class="header-bold"> {{user.displayName}}</span> -->
+
     <div class="right-card-body">
       <div class="right-card-body-container" *ngFor="let user of users">
         <div class="card" (click)="onclickUser(user.uid)">
@@ -129,121 +158,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <div class="card">
-          <div class="profile">
-            <div>
-              <img
-                src="assets\picture\avatar.png"
-                alt="Avatar"
-                class="avatar"
-              />
-            </div>
-            <div class="profile-info">
-              <span class="name-font">Lê Thanh Bảo</span>
-              <span class="job-font">
-                <span class="bubble">
-                  <span class="bubble-outer-dot"> </span> Offline
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="profile">
-            <div>
-              <img
-                src="assets\picture\avatar.png"
-                alt="Avatar"
-                class="avatar"
-              />
-            </div>
-            <div class="profile-info">
-              <span class="name-font">Đặng Thế Minh Long</span>
-              <span class="job-font">
-                <span class="bubble">
-                  <span class="bubble-outer-dot"> </span> Offline
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="profile">
-            <div>
-              <img
-                src="assets\picture\avatar.png"
-                alt="Avatar"
-                class="avatar"
-              />
-            </div>
-            <div class="profile-info">
-              <span class="name-font">Hàn Trung Kiên</span>
-              <span class="job-font">
-                <span class="bubble">
-                  <span class="bubble-outer-dot"> </span> Offline
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="profile">
-            <div>
-              <img
-                src="assets\picture\avatar.png"
-                alt="Avatar"
-                class="avatar"
-              />
-            </div>
-            <div class="profile-info">
-              <span class="name-font">Diệp Thiên Thiên</span>
-              <span class="job-font">
-                <span class="bubble">
-                  <span class="bubble-outer-dot"> </span> Offline
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="profile">
-            <div>
-              <img
-                src="assets\picture\avatar.png"
-                alt="Avatar"
-                class="avatar"
-              />
-            </div>
-            <div class="profile-info">
-              <span class="name-font">Nguyễn Hoàng Trung</span>
-              <span class="job-font">
-                <span class="bubble">
-                  <span class="bubble-outer-dot"> </span> Offline
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="profile">
-            <div>
-              <img
-                src="assets\picture\avatar.png"
-                alt="Avatar"
-                class="avatar"
-              />
-            </div>
-            <div class="profile-info">
-              <span class="name-font">Đỗ Tuấn Kiệt</span>
-              <span class="job-font">
-                <span class="bubble">
-                  <span class="bubble-outer-dot"> </span> Offline
-                </span>
-              </span>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>

@@ -76,7 +76,6 @@ export class AuthService {
         const credential = await this.afAuth.signInWithPopup(provider);
         location.href="/chat";
         return this.updateUserData(credential.user);
-        
     }
 
     async signOut() {
