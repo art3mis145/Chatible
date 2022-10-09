@@ -18,7 +18,7 @@ export class ChatComponent implements OnInit {
   chatUser: User;
   constructor(
     public auth: AuthService,
-    public call: CallService,
+    public callService: CallService,
     public data: DataService,
     private diaLog: MatDialog
   ) {
@@ -55,11 +55,11 @@ export class ChatComponent implements OnInit {
     const idRemoteVideo = <HTMLVideoElement>(
       document.getElementById('remotestream')
     );
-    this.call.openStream().then((stream) => {
-      this.call.playStream(idLocalVideo, stream);
+    this.callService.openStream().then((stream) => {
+      this.callService.playStream(idLocalVideo, stream);
       const call = this.peer.call(id, stream);
       call.on('stream', (remoteStream) =>
-        this.call.playStream(idRemoteVideo, remoteStream)
+        this.callService.playStream(idRemoteVideo, remoteStream)
       );
     });
   }
@@ -87,6 +87,10 @@ export class ChatComponent implements OnInit {
   //   });
   // }
   openWindow() {
-    this.diaLog.open(VideoCallComponent);
+    this.diaLog.open(VideoCallComponent, {
+      data: {
+        remoteId: <any>document.getElementById('remoteId'),
+      },
+    });
   }
 }
