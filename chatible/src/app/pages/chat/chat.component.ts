@@ -4,6 +4,8 @@ import { AuthService } from '../../services/auth.service';
 import Peer from 'peerjs';
 import { DataService } from 'src/app/services/data.service';
 import { User } from 'src/app/models/user.model';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { VideoCallComponent } from './components/video-call/video-call.component';
 
 @Component({
   selector: 'app-chat',
@@ -17,7 +19,8 @@ export class ChatComponent implements OnInit {
   constructor(
     public auth: AuthService,
     public call: CallService,
-    public data: DataService
+    public data: DataService,
+    private diaLog: MatDialog
   ) {
     this.peer = new Peer();
     this.peer.on('open', (id) => console.log(id));
@@ -83,4 +86,7 @@ export class ChatComponent implements OnInit {
   //     });
   //   });
   // }
+  openWindow() {
+    this.diaLog.open(VideoCallComponent);
+  }
 }

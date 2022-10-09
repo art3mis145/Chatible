@@ -15,15 +15,15 @@ export const environment = {
     measurementId: 'G-3N6JRSSJLM',
   },
   production: false,
-  firebaseConfig: {
-    apiKey: 'AIzaSyD7ys0P8vQZsiFZ23UZsPymqDX4ifHxato',
-    authDomain: 'chatible-d7afb.firebaseapp.com',
-    projectId: 'chatible-d7afb',
-    storageBucket: 'chatible-d7afb.appspot.com',
-    messagingSenderId: '569250078000',
-    appId: '1:569250078000:web:8d83f1bd79606b0b4afcf5',
-    measurementId: 'G-3N6JRSSJLM',
-  },
+  // firebaseConfig: {
+  //   apiKey: 'AIzaSyD7ys0P8vQZsiFZ23UZsPymqDX4ifHxato',
+  //   authDomain: 'chatible-d7afb.firebaseapp.com',
+  //   projectId: 'chatible-d7afb',
+  //   storageBucket: 'chatible-d7afb.appspot.com',
+  //   messagingSenderId: '569250078000',
+  //   appId: '1:569250078000:web:8d83f1bd79606b0b4afcf5',
+  //   measurementId: 'G-3N6JRSSJLM',
+  // },
 };
 
 /*
